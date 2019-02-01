@@ -11,11 +11,17 @@ import UIKit
 class ProfileViewController: UIViewController {
 
     
+    @IBOutlet weak var profileImage: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+      
         
     }
     
+    @IBAction func profileImagePressed(_ sender: UIButton) {
+        
+    }
 }
+

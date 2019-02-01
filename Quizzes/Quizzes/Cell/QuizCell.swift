@@ -14,8 +14,13 @@ class QuizCell: UICollectionViewCell {
        let label = UILabel()
        label.text = "QuizzLabel"
        label.font = UIFont.systemFont(ofSize: 18)
-       label.backgroundColor = .gray
        return label
+    }()
+    
+    lazy var cellButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "more-filled"), for: .normal)
+        return button
     }()
     
     override init(frame: CGRect) {
@@ -34,11 +39,16 @@ class QuizCell: UICollectionViewCell {
     
     private func setupConstraints() {
         addSubview(quizLabel)
+        addSubview(cellButton)
         quizLabel.translatesAutoresizingMaskIntoConstraints = false
+        cellButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            quizLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+            quizLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             quizLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
-            quizLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
+            quizLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+            
+            cellButton.topAnchor.constraint(equalTo: topAnchor, constant: 12),
+            cellButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
             ])
     }
     

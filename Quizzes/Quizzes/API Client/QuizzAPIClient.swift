@@ -10,7 +10,7 @@ import Foundation
 
 final class QuizzAPIClient {
     static func getQuizz(onCompletion: @escaping ((AppError?, [QuizzQuestion]?) -> Void)) {
-        NetworkHelper.shared.performDataTask(endpointURLString: "https://github.com/Destrella3/Pursuit-Core-iOS-Unit4-Final-Quizzes", httpMethod: "GET", httpBody: nil) { (appError, data) in
+        NetworkHelper.shared.performDataTask(endpointURLString: "http://5c4d4c0d0de08100147c59b5.mockapi.io/api/v1/quizzes", httpMethod: "GET", httpBody: nil) { (appError, data) in
             if let appError = appError {
                 onCompletion(appError, nil)
             } else if let data = data {
