@@ -20,8 +20,9 @@ class SearchCell: UICollectionViewCell {
     
     lazy var cellButton: UIButton = {
         let button = UIButton()
-        
+        button.sizeThatFits(CGSize.init(width: 25, height: 25))
         button.setImage(UIImage(named: "add-icon-filled"), for: .normal)
+        button.imageEdgeInsets = UIEdgeInsets(top: 5, left: 50, bottom: 50, right: 5)
         return button
     }()
     
@@ -49,8 +50,8 @@ class SearchCell: UICollectionViewCell {
             quizLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
             quizLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
             
-            cellButton.topAnchor.constraint(equalTo: topAnchor, constant: 12),
-            cellButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
+            cellButton.topAnchor.constraint(equalTo: topAnchor, constant: 0),
+            cellButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -0)
             ])
     }
 }

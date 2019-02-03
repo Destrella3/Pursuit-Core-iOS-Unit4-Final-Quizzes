@@ -21,7 +21,7 @@ class QuizzesViewController: UIViewController {
     
 }
 
-extension QuizzesViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
+extension QuizzesViewController: UICollectionViewDataSource   {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 11
     }
@@ -30,17 +30,19 @@ extension QuizzesViewController: UICollectionViewDataSource, UICollectionViewDel
         guard let cell = quizzCollectionView.dequeueReusableCell(withReuseIdentifier: "QuizCell", for: indexPath) as? QuizCell else {return UICollectionViewCell()}
         cell.backgroundColor = .white
         cell.layer.borderWidth = 2
+        
         return cell
+    }
+    
+}
+
+extension QuizzesViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize.init(width: 175, height: 350)
     }
-    
-}
 
-extension QuizzesViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-    }
 }

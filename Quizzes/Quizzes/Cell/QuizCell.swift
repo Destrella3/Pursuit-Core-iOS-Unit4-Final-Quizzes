@@ -20,6 +20,8 @@ class QuizCell: UICollectionViewCell {
     lazy var cellButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "more-filled"), for: .normal)
+        button.imageEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 10, right: 5)
+
         return button
     }()
     

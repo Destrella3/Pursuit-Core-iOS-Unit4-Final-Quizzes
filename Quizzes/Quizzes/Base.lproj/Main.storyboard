@@ -126,10 +126,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ox-cu-iFd">
-                                <rect key="frame" x="8" y="85" width="359" height="150"/>
+                                <rect key="frame" x="8" y="85" width="359" height="180"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6d6-Wz-hY5">
-                                        <rect key="frame" x="129.5" y="25" width="100" height="100"/>
+                                        <rect key="frame" x="129.5" y="40" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="Q1J-hF-E0w"/>
                                             <constraint firstAttribute="width" constant="100" id="mAo-QW-JSW"/>
@@ -139,12 +139,21 @@
                                             <action selector="profileImagePressed:" destination="kwq-xj-4Xc" eventType="touchUpInside" id="GyR-n8-fgC"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yl1-NY-Xof">
+                                        <rect key="frame" x="12" y="152" width="335" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="yl1-NY-Xof" firstAttribute="top" secondItem="6d6-Wz-hY5" secondAttribute="bottom" constant="12" id="6ZA-Df-7hk"/>
+                                    <constraint firstItem="yl1-NY-Xof" firstAttribute="leading" secondItem="3ox-cu-iFd" secondAttribute="leading" constant="12" id="CjR-Ct-hxG"/>
                                     <constraint firstItem="6d6-Wz-hY5" firstAttribute="centerY" secondItem="3ox-cu-iFd" secondAttribute="centerY" id="QWr-L8-Fdr"/>
                                     <constraint firstItem="6d6-Wz-hY5" firstAttribute="centerX" secondItem="3ox-cu-iFd" secondAttribute="centerX" id="VzK-Tl-k4e"/>
-                                    <constraint firstAttribute="height" constant="150" id="odT-Dx-R0y"/>
+                                    <constraint firstAttribute="trailing" secondItem="yl1-NY-Xof" secondAttribute="trailing" constant="12" id="hNr-SD-FBk"/>
+                                    <constraint firstAttribute="height" constant="180" id="odT-Dx-R0y"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9j-Lo-g9v">
@@ -168,11 +177,12 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="profile-unfilled" id="wix-if-h3e"/>
                     <connections>
                         <outlet property="profileImage" destination="6d6-Wz-hY5" id="kmw-Xh-aU4"/>
+                        <outlet property="profileImageButton" destination="6d6-Wz-hY5" id="XyT-Y3-9ri"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uI-dB-NF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="509.60000000000002" y="1091.6041979010495"/>
+            <point key="canvasLocation" x="478" y="1092"/>
         </scene>
         <!--Create-->
         <scene sceneID="Lpl-fu-tcd">
@@ -181,14 +191,64 @@
                     <view key="view" contentMode="scaleToFill" id="eVM-Iq-6cl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Quiz Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="un2-ca-kXN">
+                                <rect key="frame" x="8" y="88" width="351" height="30"/>
+                                <color key="backgroundColor" red="0.83463886480000005" green="0.88818213170000004" blue="0.95389831849999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter First Quiz Fact" translatesAutoresizingMaskIntoConstraints="NO" id="gDk-OV-9Zb">
+                                <rect key="frame" x="12" y="142" width="347" height="150"/>
+                                <color key="backgroundColor" red="0.89982550760000002" green="0.89982550760000002" blue="0.89982550760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="jn9-Pz-o3J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter Second Quiz Fact" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="M3B-uB-IEJ">
+                                <rect key="frame" x="12" y="316" width="347" height="150"/>
+                                <color key="backgroundColor" red="0.89982550760000002" green="0.89982550760000002" blue="0.89982550760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="btY-7q-8LV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AYt-Ss-RxP">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Create Quiz" id="q8e-yU-IO5">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="EPO-7P-9e9"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Create" id="lY6-bH-FDf"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fa3-I8-dW1" firstAttribute="trailing" secondItem="M3B-uB-IEJ" secondAttribute="trailing" constant="16" id="4L8-V5-cRs"/>
+                            <constraint firstItem="un2-ca-kXN" firstAttribute="top" secondItem="AYt-Ss-RxP" secondAttribute="bottom" constant="24" id="4lH-Il-Xga"/>
+                            <constraint firstItem="gDk-OV-9Zb" firstAttribute="leading" secondItem="fa3-I8-dW1" secondAttribute="leading" constant="12" id="8jN-e4-fQo"/>
+                            <constraint firstItem="AYt-Ss-RxP" firstAttribute="trailing" secondItem="fa3-I8-dW1" secondAttribute="trailing" id="Azp-am-OjK"/>
+                            <constraint firstItem="fa3-I8-dW1" firstAttribute="trailing" secondItem="gDk-OV-9Zb" secondAttribute="trailing" constant="16" id="J2A-b0-LAw"/>
+                            <constraint firstItem="AYt-Ss-RxP" firstAttribute="leading" secondItem="fa3-I8-dW1" secondAttribute="leading" id="SVt-Fr-FL5"/>
+                            <constraint firstItem="un2-ca-kXN" firstAttribute="leading" secondItem="fa3-I8-dW1" secondAttribute="leading" constant="8" id="Scq-ZX-2Cs"/>
+                            <constraint firstItem="AYt-Ss-RxP" firstAttribute="top" secondItem="fa3-I8-dW1" secondAttribute="top" id="iId-aB-GLE"/>
+                            <constraint firstItem="M3B-uB-IEJ" firstAttribute="top" secondItem="gDk-OV-9Zb" secondAttribute="bottom" constant="24" id="mP0-av-U8V"/>
+                            <constraint firstItem="M3B-uB-IEJ" firstAttribute="leading" secondItem="fa3-I8-dW1" secondAttribute="leading" constant="12" id="oDE-XR-7zA"/>
+                            <constraint firstItem="gDk-OV-9Zb" firstAttribute="top" secondItem="un2-ca-kXN" secondAttribute="bottom" constant="24" id="pJ9-BV-92p"/>
+                            <constraint firstItem="fa3-I8-dW1" firstAttribute="trailing" secondItem="un2-ca-kXN" secondAttribute="trailing" constant="16" id="wn5-o7-2T9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fa3-I8-dW1"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Create" image="create-icon" id="rqe-Pl-hf7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8oY-u5-kdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-314" y="1092"/>
+            <point key="canvasLocation" x="-231" y="1092"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nq8-P4-Hjl">
